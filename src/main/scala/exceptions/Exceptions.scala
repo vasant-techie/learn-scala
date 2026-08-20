@@ -22,5 +22,8 @@ def withExceptionHandler(): Unit = {
   } catch {
     case e: Exception => println("Please enter ONLY integer numbers!")
   }
-  println(s"The entered value is: ${in.get}")
+  if (in.isDefined)
+    println(s"The entered value is: ${in.get}")
+  else
+    withExceptionHandler()
 }
