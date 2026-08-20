@@ -1,5 +1,6 @@
 package exceptions
 
+import scala.annotation.tailrec
 import scala.io.StdIn
 
 @main
@@ -14,6 +15,7 @@ def withoutExceptionHandler(): Unit = {
   println(s"The entered value is: ${in}")
 }
 
+@tailrec
 def withExceptionHandler(): Unit = {
   print("Please enter Integer number: ")
   var in: Option[Int] = None
