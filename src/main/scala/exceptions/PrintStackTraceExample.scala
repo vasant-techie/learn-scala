@@ -8,7 +8,7 @@ import scala.io.StdIn
  */
 @main
 def printStackTraceExample(): Unit = {
-  val in = StdIn.readLine()
+  val in = StdIn.readLine("Please enter a Numerical (Integer) Value: ")
   try {
     val inVal = in.toInt
   } catch {
@@ -16,6 +16,7 @@ def printStackTraceExample(): Unit = {
     case e: NumberFormatException => println(s"This is Number Format Exception")
       println(e.printStackTrace())
     case e: Exception => e.printStackTrace()
+  } finally {
+    println(in)
   }
-  println(in)
 }
